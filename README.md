@@ -24,12 +24,12 @@ cnlite is a c# library to do chinese ocr based on project [chineseocr_lit](https
 本项目是基于 chineseocr_lite 的源代码和onnx model，本项目只是翻译了原有的python代码为C#代码
 
 ## 使用方法
-*1. 下载本项目代码
-*2. 从chineseocr_lite 项目中下载onnx models
-*3. 在vs 2015/19中，用NuGet 下载onnxruntime
-*4. 注意，onnx训练文件请放到 conf 文件夹里面
+* 1. 下载本项目代码
+* 2. 从chineseocr_lite 项目中下载onnx models
+* 3. 在vs 2015/19中，用NuGet 下载onnxruntime
+* 4. 注意，onnx训练文件请放到 conf 文件夹里面
 
 ## 使用环境
-*1. .net framework 4.6.1
-*2. onnxruntime
-*3. clipper_library
+* 1. .net framework 4.6.1
+* 2. onnxruntime
+* 3. clipper_library
