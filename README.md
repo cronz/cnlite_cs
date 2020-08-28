@@ -1,5 +1,5 @@
 # cnlite_cs
-cnlite is a c# library to do chinese ocr based on project [chineseocr_lit](https://github.com/ouyanghuiyu/chineseocr_lite)
+cnlite is a c# library to do chinese ocr based on project [chineseocr_lite](https://github.com/ouyanghuiyu/chineseocr_lite)
 
 ## Overview
 * 1. cnlite reused onnx models pretrained by chineseocr_lite project
