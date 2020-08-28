@@ -16,6 +16,7 @@ cnlite is a c# library to do chinese ocr based on project [chineseocr_lit](https
 * 1. .net framework 4.6.1
 * 2. [onnxruntime](https://github.com/Microsoft/onnxruntime)
 * 3. [clipper_library](https://sourceforge.net/projects/polyclipping/)
+* 4. [EmguCV](http://www.emgucv.com/)
 
 
 <hr/>
@@ -31,5 +32,7 @@ cnlite is a c# library to do chinese ocr based on project [chineseocr_lit](https
 
 ## 使用环境
 * 1. .net framework 4.6.1
-* 2. onnxruntime
-* 3. clipper_library
+* 2. [onnxruntime](https://github.com/Microsoft/onnxruntime)
+* 3. [clipper_library](https://sourceforge.net/projects/polyclipping/)
+* 4. [EmguCV](http://www.emgucv.com/)
+
