@@ -139,7 +139,7 @@ namespace cnLite
                 return fresults;
                 /*
                  *  the following code to draw box for each line of chinese 
-                foreach (List<Point> boxes in box.Values)
+                foreach (List<Point> boxes in decode.Boxes.Values)
                 {
                     DrawBox(rgbMat, boxes);
                 }
