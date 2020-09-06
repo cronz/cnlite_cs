@@ -18,6 +18,11 @@ cnlite is a c# library to do chinese ocr based on project [chineseocr_lite](http
 * 3. [clipper_library](https://sourceforge.net/projects/polyclipping/)
 * 4. [EmguCV](http://www.emgu.com/wiki/index.php/Main_Page)
 
+## How to use EmguCV
+* 1. download EmguCV from [Download and installation](http://www.emgu.com/wiki/index.php/Download_And_Installation) page
+* 2. installEmguCV
+* 3. Copy library to your target path, the required vcrt dlls are included in the "x86" and "x64" folder. You will be ready as long as you copy all the unmanaged dlls in the "x86" and "x64" folder to the folder of executable
+* 4. Be careful to configure target Platform based on "x84" or "x64" folder
 
 <hr/>
 
@@ -36,3 +41,7 @@ cnlite is a c# library to do chinese ocr based on project [chineseocr_lite](http
 * 3. [clipper_library](https://sourceforge.net/projects/polyclipping/)
 * 4. [EmguCV](http://www.emgu.com/wiki/index.php/Main_Page)
 
+## EmguCV 的使用
+* 1. 本项目使用的EmguCV，是OpenCV 的C# API调用版本
+* 2. 要先下载安装EmguCV
+* 3. 注意要复制相应的 x64 或者 x86 文件夹的所有文件到编译路径下面。EmguCV的安装路径下面有对应的x86/x64文件夹，请将所有的动态库复制到C#工程编译路径(一般是bin\Debug)下面。请[参考](http://www.emgu.com/wiki/index.php/Download_And_Installation#Open_CV_unmanaged_dll)
