@@ -60,11 +60,39 @@ namespace cnLite
 
         private Tensor<float> GetInputs(string imageFilePath, Mat rgbMat, out int new_h, out int new_w)
         {
-            int short_size = 960;
+
+
             // Read image
             Mat imageMat = CvInvoke.Imread(imageFilePath, ImreadModes.Color);
-            CvInvoke.CvtColor(imageMat, rgbMat, ColorConversion.Bgr2Rgb);
+
+            Mat imgDst = new Mat();
+
+            //扩充图像的边界（上下左右各50个像素点），并填充固定像素值（白色）
+            CvInvoke.CopyMakeBorder(imageMat, imgDst, 50, 50, 50, 50, BorderType.Isolated, new MCvScalar(255, 255, 255));
+            //三通道bgr图转换到灰度图
+            CvInvoke.CvtColor(imgDst, rgbMat, ColorConversion.Bgr2Rgb);
+
             imageMat.Dispose();
+            imgDst.Dispose();
+
+
+            //取图片最小的边做为短边
+            int short_size = rgbMat.Height < rgbMat.Width ? rgbMat.Height : rgbMat.Width;
+
+            ////测试发现如果短边小于96，会造成识别不出来或者识别不完全，要保证短边不小于96
+            ///（因为上面对图片做了4边各加50像素的预处理，结果肯定大于96了，这里不再是必需的）
+            //if (short_size < 96)
+            //{
+            //    short_size = 96;
+            //}
+            //else
+            //{
+                //确保短边大于图片最小的边
+                short_size += 32;
+                //短边 取整为32的倍数
+                short_size = 32 * (short_size / 32);
+            //}
+
 
             double scale_h = 0, tar_w = 0, scale_w = 0, tar_h = 0;
 
@@ -93,6 +121,7 @@ namespace cnLite
 
             return GetTensorInputFromImg(imgResized);
         }
+
 
         public List<string> DoOcr(string imageFilePath)
         {
